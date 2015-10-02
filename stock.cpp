@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <string>
+#include <cstdlib>
 
 #include "stock.h"
 
@@ -30,6 +31,12 @@ double Stock::getPrice() const {
 
 string Stock::getName() const {
 	return id;
+}
+
+void Stock::updatePrice() {
+	double change = ((double) rand() / (RAND_MAX));
+
+	price = price * (change+1);
 }
 
 

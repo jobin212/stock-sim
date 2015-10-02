@@ -24,6 +24,7 @@ public :
 	void setPrice(double newPrice);
 	double getPrice() const;
 	string getName() const;
+	void updatePrice();
 
 private:
 	string id;

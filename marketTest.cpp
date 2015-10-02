@@ -10,6 +10,7 @@ const int marketSize = 3;
 
 //prototypes
 void printMarket(Stock * market [marketSize], int marketSize);
+void updateMarket(Stock * market [marketSize], int marketSize);
 
 
 int main() {
@@ -28,14 +29,21 @@ int main() {
 
 	Stock * CCCC = new Stock("CCCC", priceC);
 
-
-
-
 	Stock * market [marketSize]	 = {AAAA, BBBB, CCCC};
 
 
 	
 	printMarket(market, marketSize);
+
+	updateMarket(market, marketSize);
+
+	printMarket(market, marketSize);
+
+	while(true) {
+		printMarket(market, marketSize);
+
+		updateMarket(market, marketSize);
+	}
 	
 }
 
@@ -49,6 +57,15 @@ void printMarket(Stock * market [marketSize], int marketSize) {
 	}
 
 	cout << "Market cap : " << sum << endl;
+	
+}
+
+void updateMarket(Stock * market [marketSize], int marketSize) {
+	int sum = 0;
+
+	for(int i = 0; i <marketSize; i++) {
+		market[i]->updatePrice();
+	}
 	
 }
 
