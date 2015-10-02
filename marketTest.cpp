@@ -6,14 +6,14 @@
 
 using namespace std;
 
+const int marketSize = 3;
 
 //prototypes
-void printMarket(Stock * market, int marketSize);
+void printMarket(Stock * market [marketSize], int marketSize);
 
 
 int main() {
 	double priceA, priceB, priceC;
-	const int marketSize = 3;
 	int marketCap = 0;
 
 	priceA = 10.0;
@@ -35,30 +35,23 @@ int main() {
 
 
 	
-	for(int i = 0; i <marketSize; i++) {
-		cout << market[i] -> getName() << " : " <<  market[i]->getPrice() << endl;	
-		marketCap += market[i]->getPrice();
-	}
-
-	cout << "Market cap : " << marketCap << endl;
-	
 	printMarket(market, marketSize);
 	
 }
 
-/*
-void printMarket(Stock * market, int marketSize) {
+
+void printMarket(Stock * market [marketSize], int marketSize) {
 	int sum = 0;
 
 	for(int i = 0; i <marketSize; i++) {
-		cout << market[i].getName() << " : " <<  market[i].getPrice() << endl;	
-		sum += market[i].getPrice();
+		cout << market[i]->getName() << " : " <<  market[i]->getPrice() << endl;	
+		sum += market[i]->getPrice();
 	}
 
 	cout << "Market cap : " << sum << endl;
 	
 }
-*/
+
 
 
 
