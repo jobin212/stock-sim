@@ -7,6 +7,7 @@
 using namespace std;
 
 const int marketSize = 3;
+const int numDays = 5;
 
 //prototypes
 void printMarket(Stock * market [marketSize], int marketSize);
@@ -39,7 +40,7 @@ int main() {
 
 	printMarket(market, marketSize);
 
-	while(true) {
+        for(int i = 0; i < numDays; i++) {
 		printMarket(market, marketSize);
 
 		updateMarket(market, marketSize);

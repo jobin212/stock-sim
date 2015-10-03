@@ -34,6 +34,7 @@ string Stock::getName() const {
 }
 
 void Stock::updatePrice() {
+  //need to adjust so return is normal
 	double change = ((double) rand() / (RAND_MAX));
 
 	price = price * (change+1);
